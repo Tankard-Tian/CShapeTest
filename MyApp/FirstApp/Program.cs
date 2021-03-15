@@ -10,7 +10,7 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("First code...");
+
         }
     }
 }
