@@ -10,7 +10,6 @@ namespace TaskStudy
     {
         static void Main(string[] args)
         {
-
         }
     }
 }
