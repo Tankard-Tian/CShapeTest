@@ -42,5 +42,20 @@ namespace FirstApp
             }
         }
 
+        // 3秒内没有响应 返回null
+        static async Task<string> DownloadStringWithTimeout(string url)
+        {
+            using (var client = new HttpClient())
+            {
+                Task<string> downloadTask = client.GetStringAsync(url);
+                Task timeoutTask = Task.Delay(3000);
+                var completedTask = await Task.WhenAny(downloadTask, timeoutTask);
+                if(completedTask == timeoutTask)
+                {
+                    return null;
+                }
+                return await downloadTask;
+            }
+        }
     }
 }
