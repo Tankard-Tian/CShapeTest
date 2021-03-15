@@ -10,6 +10,7 @@ namespace TaskStudy
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("撤销...");
         }
     }
 }
